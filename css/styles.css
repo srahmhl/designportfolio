@@ -10,7 +10,7 @@
     --size-heading: 42px;
     --size-subheading: 24px;
     --size-body: 18px; /* need to be in rem */
-    --size-btn: 20px;
+    --size-btn: 24px;
     --size-xsm: 14px;
     --default-margin: 2rem;
     --default-padding: 1rem;
@@ -71,6 +71,13 @@ br {
     margin: var(--default-margin) 0 var(--default-margin) 0;
     width: 100%;
 }
+.grid-container-6 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: var(--default-margin);
+    margin: var(--default-margin) 0 var(--default-margin) 0;
+    width: 100%;
+}
 @media (min-width: 800px) {
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
@@ -78,6 +85,10 @@ br {
     .grid-container-third {
         grid-template-columns: 1fr 3fr;
     }
+    .grid-container-6 {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    
 }
 .grid-item-space {
     margin: var(--default-margin);
@@ -107,7 +118,7 @@ br {
     border-width: 2px;
 }
 img {
-    margin-bottom: var(--default-padding);
+    margin: var(--default-padding) 0 var(--default-padding) 0;
 }
 .avatar {
     background-color: var(--text-color);
@@ -117,6 +128,9 @@ img {
 }
 .margin-bottom {
     margin-bottom: var(--default-margin);
+}
+.border-light {
+    border: solid 5px var(--text-color);
 }
 
 /* text styling */
@@ -261,10 +275,11 @@ nav {
 .button:hover {
     color: var(--accent-color);
     transition: var(--transition-style);
+    transform: translate(0, -4px);
 }
 .button a {
     display: block;
-    padding: 20px;
+    padding: var(--default-margin);
 }
 .btn-link {
     text-decoration: none;
@@ -340,6 +355,15 @@ footer {
 }
 .delay-2 {
     transition-delay: 200ms;
+}
+.delay-3 {
+    transition-delay: 300ms;
+}
+.delay-4 {
+    transition-delay: 400ms;
+}
+.delay-5 {
+    transition-delay: 500ms;
 }
 .typewriter p {
     /* color: #fff;
