@@ -54,7 +54,6 @@ br {
     grid-template-columns: repeat(2, 1fr);
     column-gap: var(--default-margin);
     width: 100%;
-    margin: 0 0 10px 0;
 }
 .grid-container-3 {
     display: grid;
