@@ -1,12 +1,15 @@
 :root {
     --background-color: black;
     --accent-color: #6BB867;
+    /* --accent-color: #D11F00; */
     --accent-color-2: #551A8B;
     --text-color: #FDF5E8;
     --text-grey: #C2BBA9;
     /* --font-header: "Source Code Pro", serif; */
     --font-header: "VT323", monospace;
+    --font-header-secondary: "Press Start 2P", cursive;
     --font-body: "Ubuntu", sans-serif;
+    --size-heading-xlg: 92px;
     --size-heading: 42px;
     --size-subheading: 24px;
     --size-body: 18px; /* need to be in rem */
@@ -25,6 +28,9 @@
 }
 body {
     background-color: var(--background-color);
+    background-image: url(media/images/icons/stars-opaque.png);
+    /* background-image: url("media/images/icons/stars-opaque.png"), linear-gradient(to bottom, black, #100C14, #392645, #523535); */
+    background-attachment: fixed;
     font-family: var(--font-body);
     color: var(--text-color);
     font-size: var(--size-body);
@@ -49,6 +55,9 @@ br {
     margin: var(--default-margin) 0 var(--default-margin) 0;
     width: 100%;
 }
+.grid-container-header {
+    margin: var(--default-margin);
+}
 .grid-subheading {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -63,26 +72,15 @@ br {
     width: 100%;
     justify-content: center;
 }
-.grid-container-third {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    column-gap: var(--default-margin);
-    margin: var(--default-margin) 0 var(--default-margin) 0;
-    width: 100%;
-}
-.grid-container-6 {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    column-gap: var(--default-margin);
-    margin: var(--default-margin) 0 var(--default-margin) 0;
-    width: 100%;
-}
 @media (min-width: 800px) {
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
     }
     .grid-container-third {
         grid-template-columns: 1fr 3fr;
+    }
+    .grid-container-4 {
+        grid-template-columns: repeat(4, 1fr);
     }
     .grid-container-6 {
         grid-template-columns: repeat(6, 1fr);
@@ -116,9 +114,6 @@ br {
     border-color: var(--text-color);
     border-width: 2px;
 }
-img {
-    margin: var(--default-padding) 0 var(--default-padding) 0;
-}
 .avatar {
     background-color: var(--text-color);
     border-radius: 100%;
@@ -130,6 +125,23 @@ img {
 }
 .border-light {
     border: solid 5px var(--text-color);
+}
+.list-style-alt {
+    list-style-image: url(media/images/icons/heart-transp_18x18.png);
+}
+img {
+    margin: var(--default-padding) 0 var(--default-padding) 0;
+}
+.fixed-behind {
+    position: relative;
+    margin: 0;
+}
+.ghost-parent {
+    position: relative;
+}
+.ghost-child {
+    position: absolute;
+    right: 0;
 }
 
 /* text styling */
@@ -147,6 +159,9 @@ a:hover {
     transition: var(--transition-style);
     transform: translate(0, -4px);
 }
+.body-text {
+    background-color: var(--background-color);
+}
 .link-light {
     color: var(--text-color);
 }
@@ -163,7 +178,7 @@ a:hover {
     color: var(--accent-color);
 }
 .heading-xlg {
-    font-size: 76px;
+    font-size: var(--size-heading-xlg);
     font-family: var(--font-header);
     color: var(--accent-color);
     letter-spacing: 4px;
@@ -379,7 +394,7 @@ footer {
     letter-spacing: .15em; /* Adjust as needed */
     animation: 
       typing 3s steps(30, end),
-      blink-caret .5s step-end infinite;
+      blink-caret 1s step-end infinite;
 }
   
   /* The typing effect */
@@ -393,3 +408,152 @@ footer {
     from, to { border-color: transparent }
     50% { border-color: white }
 }
+
+/* custom scroll bar */
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) var(--background-color);
+}
+  
+::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+}
+
+::-webkit-scrollbar-corner,
+::-webkit-scrollbar-track {
+    background-color: #09070C;
+}
+
+::-webkit-scrollbar-thumb {
+    /* background-color: rgb(96, 96, 96); */
+    background-color: #31302E;
+    background-clip: padding-box;
+    border: 2px solid transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    /* background-color: rgb(112, 112, 112); */
+    background-color: #4A4A4A;
+}
+
+::-webkit-scrollbar-thumb:active {
+    /* background-color: rgb(128, 128, 128); */
+    background-color: #40473D;
+}
+
+/* Buttons */
+::-webkit-scrollbar-button:single-button {
+    background-color: #09070C;
+    display: block;
+    background-size: 10px;
+    background-repeat: no-repeat;
+}
+
+/* Up */
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+    height: 12px;
+    width: 16px;
+    background-position: center 4px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(49, 48, 46)'><polygon points='50,00 0,50 100,50'/></svg>");
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement:hover {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(74, 74, 74)'><polygon points='50,00 0,50 100,50'/></svg>");
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement:active {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(64, 71, 61)'><polygon points='50,00 0,50 100,50'/></svg>");
+}
+
+/* Down */
+::-webkit-scrollbar-button:single-button:vertical:increment {
+    height: 12px;
+    width: 16px;
+    background-position: center 2px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(49, 48, 46)'><polygon points='0,0 100,0 50,50'/></svg>");
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment:hover {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(74, 74, 74)'><polygon points='0,0 100,0 50,50'/></svg>");
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment:active {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(64, 71, 61)'><polygon points='0,0 100,0 50,50'/></svg>");
+}
+
+/* Left */
+::-webkit-scrollbar-button:single-button:horizontal:decrement {
+    height: 12px;
+    width: 12px;
+    background-position: 3px 3px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(49, 48, 46)'><polygon points='0,50 50,100 50,0'/></svg>");
+
+}
+
+::-webkit-scrollbar-button:single-button:horizontal:decrement:hover {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(74, 74, 74)'><polygon points='0,50 50,100 50,0'/></svg>");
+}
+
+::-webkit-scrollbar-button:single-button:horizontal:decrement:active {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(64, 71, 61)'><polygon points='0,50 50,100 50,0'/></svg>");
+}
+
+/* Right */
+::-webkit-scrollbar-button:single-button:horizontal:increment {
+    height: 12px;
+    width: 12px;
+    background-position: 3px 3px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(49, 48, 46)'><polygon points='0,0 0,100 50,50'/></svg>");
+}
+
+::-webkit-scrollbar-button:single-button:horizontal:increment:hover {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(74, 74, 74)'><polygon points='0,0 0,100 50,50'/></svg>");
+}
+
+::-webkit-scrollbar-button:single-button:horizontal:increment:active {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' fill='rgb(64, 71, 61)'><polygon points='0,0 0,100 50,50'/></svg>");
+}
+/* Works on Chrome, Edge, and Safari */
+/* *::-webkit-scrollbar {
+    width: 12px;
+}
+*::-webkit-scrollbar-button {
+    background-color: var(--color-accent);
+    border-radius: 3px;
+    border: 1px solid black;
+    height: 12px;
+}
+*::-webkit-scrollbar-button:hover {
+    background-color: #960000;
+}
+*::-webkit-scrollbar-track {
+    background: black;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--color-accent);
+    border-radius: 3px;
+    border: 1px solid black;
+}
+*::-webkit-scrollbar-thumb:hover {
+    background-color: #960000;
+    cursor: pointer;
+} */
+
+/* ::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-button {
+    color: black;
+}
+::-webkit-scrollbar-track {
+    background: var(--color-background);
+}
+::-webkit-scrollbar-thumb {
+    background: black;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent);
+} */

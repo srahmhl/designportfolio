@@ -8,7 +8,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Source+Code+Pro&family=Ubuntu&family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Source+Code+Pro&family=Ubuntu:wght@400;700&family=VT323&display=swap" rel="stylesheet">
 
     <!-- stylesheets -->
     <link href="css/styles.css" rel="stylesheet">
@@ -23,44 +23,41 @@
             <li><a class="item" href="#contact">contact</a></li>
         </ul>
     </nav>
-
     <main>
         <section>
-            <div class="grid-container hidden">
-                <div class="grid-item hidden">
+            <div class="grid-container grid-container-header hidden">
+                <div class="grid-item d-center hidden">
+                    <div>
+                        <div class="hidden">
+                            <div class="d-inline-block typewriter">
+                                <div class="text-align-right">
+                                    <p class="heading-xlg"><a href="error.html">SARAH MAHL</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden margin-bottom delay-2">
+                            <p class="subheading">Let's bring UX Design back to life.</p>
+                            <div class="ghost-parent">
+                                <div class="ghost-child">
+                                    <a href="error.html"><img class="fixed-behind" src="css/media/gifs/ghost-waving.gif" alt="A gif of a pixelated sheet ghost waving and hovering up and down."></a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="grid-item hidden delay">
                     <div class="d-center">
                         <img class="avatar" src="css/media/images/people/avatar-smiling-flipped.png">
                     </div>
                 </div>
-                <div class="grid-item align-center hidden delay">
-                    <div>
-                        <div class="hidden">
-                            <span class="subheading">Hi there! I'm &nbsp;</span>
-                            <span class="heading-xlg">Sarah Mahl.</span>
-                        </div>
-                        <div class="hidden margin-bottom">
-                            <span class="subheading">I'm a &nbsp;</span>
-                            <span class="heading">User Experience Designer </span>
-                            <span class="subheading">and a &nbsp;</span>
-                            <span class="heading">Programmer.</span>
-                        </div>
-                        <div class="hidden align-center delay-2">
-                            <div class="d-inline-block typewriter">
-                                <div class="text-align-right">
-                                    <p class="subheading"><a class="link-light" href="error.html">Learn more about me ></a></p>  
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
-                </div>
             </div>
         </section>
-
         <div id="work">
             <div class="box hidden">
                 <p class="heading">Work</p>
             </div>
-            <div class="grid-container hidden">
+            <div class="grid-container">
                 <div class="grid-item hidden">
                     <div class="grid-subheading">
                         <div class="grid-item">
@@ -72,7 +69,6 @@
                     </div>
                     <a href="pocket-teacher.html"><img src="css/media/images/pocketteacher-mock.png" alt="A mockup of Pocket Teacher's app dashboard on an iPhone being held by a wooden hand." width="100%"></a>
                     <p class="text-body">Pocket Teacher combines ChatGPT and education--all to support students learning online.</p>
-                    <!-- <button class="button button-light btn-text"><a class="btn-link-dark" href="#">learn more</a></button> -->
                 </div>
                 <div class="grid-item hidden delay">
                     <div class="grid-subheading">
@@ -80,24 +76,20 @@
                             <p class="text-xsm"><a class="link-light" href="error.html">Design Portfolio</a></p>
                         </div>
                         <div class="grid-item">
-                            <p class="text-xsm text-body text-align-right">User Experience and Programming</p>
+                            <p class="text-xsm text-body text-align-right">User Experience</p>
                         </div>
                     </div>
                     <a href="error.html"><img src="css/media/images/portfolio-mock.png" alt="A mockup of my portfolio's home page on an iPad." width="100%"></a>
                     <p class="text-body">Let’s get meta. Dive into my design process and research methods in this in-depth look at making my portfolio an experience.</p>
-                    <!-- <button class="button button-light btn-text"><a class="btn-link-dark" href="#">learn more</a></button> -->
                 </div>
-            </div>
-            <div class="grid-container hidden">
                 <div class="grid-item hidden">
-                    <div class="grid-subheading">
+                    <div>
                         <div class="grid-item">
-                            <p class="text-xsm">Coming Soon</p>
+                            <p class="text-xsm">Next Project Coming Soon</p>
                         </div>
                     </div>
                     <img src="css/media/images/empty-frame.png" alt="A blank square. This is a placeholder for a future project." width="100%">
                 </div>
-                <div class="grid-item"></div>
             </div>
         </div>
     </main>
@@ -124,6 +116,7 @@
             <p class="text-body">Last updated: February 2023</p>
         </div> 
     </footer>
+    <img class="fixed-behind hidden" src="css/media/images/graveyard/graveyard_bckgd.png" alt="A pixelated graveyard, drawn by Sarah Mahl." width="100%">
 
     <script src="script.js"></script>
 </body>
