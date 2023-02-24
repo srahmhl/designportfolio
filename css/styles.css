@@ -1,8 +1,10 @@
 :root {
-    --background-color: black;
+    --background-color: #050505;
+    /* --background-color: #FCF4E7; */
     --accent-color: #6BB867;
-    /* --accent-color: #D11F00; */
+    /* --accent-color: #CC0416; */
     --accent-color-2: #551A8B;
+    /* --text-color: #0C0D0C; */
     --text-color: #FDF5E8;
     --text-grey: #C2BBA9;
     /* --font-header: "Source Code Pro", serif; */
