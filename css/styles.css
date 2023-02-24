@@ -44,7 +44,7 @@ main {
 section {
     display: grid;
     align-content: center;
-    min-height: 75vh;
+    min-height: 45vh;
 }
 br {
     margin: var(--default-margin);
